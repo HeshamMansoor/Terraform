@@ -1,6 +1,6 @@
-resource "aws_eip" "elasticIp" {
+/*resource "aws_eip" "elasticIp" {
   
   tags = {
     Name = "elsip"
   }
-}
+}*/

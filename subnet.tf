@@ -1,23 +1,23 @@
 resource "aws_subnet" "public1" {
   vpc_id     = aws_vpc.learing.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.public1_subnet_cidr
   #give a public ip auto
   map_public_ip_on_launch= true
-  availability_zone= "eu-west-3a"
+  availability_zone= var.az1
   tags = {
     Name = "public1"
   }
 }
 resource "aws_subnet" "public2" {
   vpc_id     = aws_vpc.learing.id
-  cidr_block = "10.0.2.0/24"
+  cidr_block = var.public2_subnet_cidr
    map_public_ip_on_launch= true
-   availability_zone= "eu-west-3b"
+   availability_zone= var.az2
   tags = {
     Name = "public2"
   }
 }
-resource "aws_subnet" "private1" {
+/*resource "aws_subnet" "private1" {
   vpc_id     = aws_vpc.learing.id
   cidr_block = "10.0.3.0/24"
   availability_zone= "eu-west-3a"
@@ -34,4 +34,4 @@ resource "aws_subnet" "private2" {
   tags = {
     Name = "private2"
   }
-}
+}*/
